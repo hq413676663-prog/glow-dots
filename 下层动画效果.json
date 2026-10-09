@@ -1,0 +1,76 @@
+{
+  "format": "lower-animation-effect",
+  "version": 1,
+  "source": "波点循环.html",
+  "description": "仅保留下层动画效果的参数与绘制逻辑；不包含上层波点采样与绘制。",
+  "animation": {
+    "mode": "aura",
+    "trigger": "always",
+    "duration": 120,
+    "controls": {
+      "aura": {
+        "pull": 62,
+        "flow": 68
+      }
+    }
+  },
+  "lighting": {
+    "theme": "dark",
+    "fillColor": "#EBF6FF",
+    "glowColor": "#5CAAFF",
+    "glowStrength": 20,
+    "glowBlur": 46,
+    "glowSpread": 20
+  },
+  "coordinateSystem": "canvas-pixels",
+  "loop": {
+    "durationMs": 12000,
+    "repeat": "infinite",
+    "frameRateLimit": 30
+  },
+  "centerBreathing": {
+    "signal": "(sin(t * PI / 6000) + 1) / 2",
+    "scale": "1 + glowScale * signal",
+    "radius": "4 * scale",
+    "radialGradientRadius": "1.5 * scale",
+    "colors": [
+      { "offset": 0, "color": "#EBF6FF", "alpha": "glowAlpha" },
+      { "offset": 0.55, "color": "#5CAAFF", "alpha": "glowAlpha * 0.45" },
+      { "offset": 1, "color": "#5CAAFF", "alpha": 0 }
+    ]
+  },
+  "expandingRing": {
+    "progress": "t / durationMs",
+    "easing": "smoothstep (p * p * (3 - 2 * p))",
+    "radius": "2 + eased * maxRadius",
+    "maxRadius": "hypot(canvasColumns, canvasRows) * ringRange",
+    "lineWidth": "ringWidth",
+    "color": "#EBF6FF",
+    "alpha": "ringAlpha * clamp(progress / 0.15, 0, 1) * (1 - progress)",
+    "blurPx": "ringBlur"
+  },
+  "centerCore": {
+    "radius": "coreRadius * (0.7 + 0.3 * breathingSignal)",
+    "color": "#EBF6FF",
+    "alpha": "coreAlpha"
+  },
+  "defaultParameters": {
+    "speed": 3,
+    "ringWidth": 10,
+    "ringAlpha": 0.3,
+    "ringBlur": 6,
+    "ringRange": 0.62,
+    "glowScale": 1,
+    "glowAlpha": 0.2,
+    "coreRadius": 5.25,
+    "coreAlpha": 0.3
+  },
+  "renderOrder": [
+    "clearLowerLayer",
+    "drawCenterBreathingGlow",
+    "applyRingBlur",
+    "drawExpandingRing",
+    "drawCenterCore",
+    "resetFilter"
+  ]
+}

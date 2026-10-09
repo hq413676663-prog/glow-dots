@@ -1,0 +1,60 @@
+{
+  "shape": {
+    "size": 56,
+    "roundness": 30,
+    "scale": 24,
+    "glowFalloff": 62,
+    "configMode": false,
+    "type": "rectangle",
+    "controls": {}
+  },
+  "animation": {
+    "size": 24,
+    "duration": 96,
+    "randomSpread": 34,
+    "mode": "matrix",
+    "trigger": "always",
+    "controls": {
+      "matrix": {
+        "pattern": 84,
+        "randomness": 26
+      }
+    }
+  },
+  "display": {
+    "customText": "MATRIX"
+  },
+  "lighting": {
+    "useP3": false,
+    "fillColor": "#D7F9FF",
+    "glowColor": "#22D3EE",
+    "glowStrength": 42,
+    "glowBlur": 38,
+    "glowSpread": 28,
+    "glowHueShift": 186,
+    "innerShadowColor": "rgba(0,0,0,.24)",
+    "innerShadowBlur": 12,
+    "innerShadowSpread": 3
+  },
+  "audio": {
+    "sound": "clicks",
+    "settings": {},
+    "volume": 8,
+    "width": 0.5,
+    "pitch": 0.8,
+    "time": 1,
+    "offsetPercent": 1,
+    "limit": 0.25,
+    "randomness": 0.25,
+    "muted": false
+  },
+  "canvas": {
+    "scale": 2,
+    "override": 2,
+    "displayP3Context": false
+  },
+  "grid": {
+    "columns": 30,
+    "rows": 21
+  }
+}

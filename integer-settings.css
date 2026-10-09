@@ -1,0 +1,27 @@
+.glow-dots-shell .settings-integer-field {
+  flex: 0 0 64px;
+  width: 64px;
+  opacity: 1;
+  gap: 2px;
+  justify-content: center;
+}
+.glow-dots-shell .settings-integer-input {
+  width: 100%;
+  min-width: 0;
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--settings-text-main) 8%, transparent);
+  color: var(--settings-text-strong);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  appearance: textfield;
+  transition: border-color 150ms, background-color 150ms, box-shadow 150ms;
+}
+.glow-dots-shell .settings-integer-input::-webkit-inner-spin-button,
+.glow-dots-shell .settings-integer-input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+.glow-dots-shell .settings-integer-input:hover { background: color-mix(in srgb, var(--settings-text-main) 12%, transparent); }
+.glow-dots-shell .settings-integer-input:focus { outline: none; border-color: transparent; box-shadow: none; }
+.glow-dots-shell .settings-integer-unit { font-size: 10px; opacity: .55; }
