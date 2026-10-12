@@ -185,6 +185,16 @@
 	<script src="./zh-translate.js?v=5"></script>
 	<script src="./lottie-settings.js?v=7"></script>
 	<script src="./import-animation.js?v=21"></script>
+	<style id="panel-centering-style">
+		@media (min-width: 1025px) {
+			.glow-dots-shell .hero .hero__stage-main {
+				--panel-center-shift: 0px;
+				transform: translate3d(var(--panel-center-shift), 0, 0) !important;
+				will-change: transform;
+			}
+		}
+	</style>
+	<script src="./panel-centering.js?v=2"></script>
 <style id="settings-fold-hinge">
 @media (min-width: 1025px) {
   .glow-dots-shell .hero .hero__stage {
@@ -196,7 +206,7 @@
   .glow-dots-shell .hero.is-toggling[data-settings-open="false"] .hero__stage-main,
   .glow-dots-shell .hero.is-toggling[data-settings-open="true"] .hero__stage-main {
     transform-origin: right center !important;
-    transform: none !important;
+    transform: translate3d(var(--panel-center-shift, 0px), 0, 0) !important;
     animation: none !important;
   }
   .glow-dots-shell .hero .hero__settings-panel {
